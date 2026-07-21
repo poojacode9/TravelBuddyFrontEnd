@@ -1,0 +1,48 @@
+.why-section {
+    padding: 70px 50px;
+    background: white;
+}
+
+.why-section h2 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 260px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+.feature-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.5;
+}
