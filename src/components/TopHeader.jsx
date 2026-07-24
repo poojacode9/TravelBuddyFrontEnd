@@ -14,9 +14,6 @@ return (
 
 <nav className="user-menu">
 
-<Link to="/login">
-My Profile
-</Link>
 
 
 <Link to="/changepassword">

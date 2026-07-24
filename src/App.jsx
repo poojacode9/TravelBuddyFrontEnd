@@ -12,7 +12,6 @@ import TourHistory from "./pages/TourHistory";
 import Ticket from "./pages/Ticket";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import TopHeader from "./components/TopHeader";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -21,7 +20,7 @@ function App() {
     
     <BrowserRouter>
      
-    <TopHeader />
+   
 
       <Navbar />
       <Routes>

@@ -18,6 +18,8 @@ function Navbar() {
 
         <li><Link to="/needhelp">Need Help</Link></li>
 
+        <li><Link to="/login">MyProfile</Link></li>
+
       </ul>
     </nav>
   );
