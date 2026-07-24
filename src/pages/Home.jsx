@@ -11,15 +11,14 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      <TopHeader />
-      <Navbar />
+     
       <Hero />
       <SearchBar />
       <PackageList />
       <WhyChooseUs />
       <Destinations />
       <Testimonials />
-      <Footer />
+      
     </>
   );
 }
