@@ -1,27 +1,70 @@
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    background: #ffffff;
-    padding: 18px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 35px;
 }
+
 
 .navbar a {
-    text-decoration: none;
-    color: #1e40af;
-    font-size: 17px;
-    font-weight: 600;
-    transition: 0.3s;
+  text-decoration: none;
+  color: #1e40af;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.3s;
+
+  position: relative;
 }
+
+
+/* Hover effect */
 
 .navbar a:hover {
-    color: #ff9800;
+  color: #ff9800;
 }
 
+
+/* Active link */
+
 .navbar a.active {
-    color: #ff9800;
-    border-bottom: 3px solid #ff9800;
-    padding-bottom: 5px;
+  color: #ff9800;
+}
+
+
+/* Underline animation */
+
+.navbar a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 0%;
+
+  height: 3px;
+
+  background-color: #ff9800;
+
+  transition: 0.3s;
+
+}
+
+
+.navbar a:hover::after {
+
+  width: 100%;
+
 }
