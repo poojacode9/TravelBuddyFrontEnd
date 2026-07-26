@@ -1,24 +1,49 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
+
+  const { user } = useAuth();
+
   return (
-        <nav className="navbar">
+    <nav className="navbar">
 
-            <NavLink to="/">Home</NavLink>
+      {user?.role === "GUIDE" || user?.role === "ADMIN" ? (
 
-            <NavLink to="/packages">Tour Packages</NavLink>
+          <NavLink to={
+            user.role === "GUIDE"
+              ? "/guide-dashboard"
+              : "/admin-dashboard"
+          } className="nav-link">
+            Dashboard
+          </NavLink>
 
-            <NavLink to="/about">About</NavLink>
+        ) : (
+        <NavLink to="/" className="nav-link">
+          Home
+        </NavLink>
 
-            <NavLink to="/privacy-policy">Privacy Policy</NavLink>
+      )}
 
-            <NavLink to="/contact">Contact</NavLink>
 
-            <NavLink to="/need-help">Need Help</NavLink>
+      <NavLink to="/about" className="nav-link">
+        About
+      </NavLink>
 
-        </nav>
-    );
+
+      <NavLink to="/packages" className="nav-link">
+        Tour Packages
+      </NavLink>
+
+
+      <NavLink to="/contact" className="nav-link">
+        Contact Us
+      </NavLink>
+
+
+    </nav>
+  );
 }
 
 export default Navbar;

@@ -1,91 +1,163 @@
-.top-header {
-  width: 100%;
-  height: 75px;
+.top-header{
 
-  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background:#0d6efd;
+    color:white;
 
-  padding: 0 40px;
+    padding:12px 40px;
 
-  color: white;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
+.website-name h2{
 
-.website-name h2 {
-  margin: 0;
-  font-size: 30px;
+    margin:0;
+    font-size:30px;
+    font-weight:700;
 }
 
+.right-section{
 
-/* Login/Register + Logo container */
-
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display:flex;
+    align-items:center;
+    gap:25px;
 }
 
+.logo img{
 
-.user-menu {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    width:45px;
+    height:45px;
 }
 
+.auth-buttons{
 
-.auth-btn {
-
-  text-decoration: none;
-
-  color: white;
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  padding: 8px 18px;
-
-  border-radius: 20px;
-
-  transition: 0.3s;
+    display:flex;
+    gap:12px;
 }
 
+.auth-btn{
 
-/* Login */
+    text-decoration:none;
+    color:white;
 
-.login {
-  background: white;
-  color: #0d6efd;
+    border:2px solid white;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    transition:.3s;
+
+    font-weight:600;
 }
 
+.auth-btn:hover{
 
-/* Register */
-
-.register {
-  background: white;
-  color: #0d6efd;
+    background:white;
+    color:#0d6efd;
 }
 
+.user-dropdown{
 
-.auth-btn:hover {
-  background: #ffd700;
-  color: black;
+    position:relative;
 }
 
+.user-btn{
 
-.logo img {
+    display:flex;
+    align-items:center;
+    gap:10px;
 
-  width: 55px;
+    background:white;
+    color:#0d6efd;
 
-  height: 55px;
+    border:none;
 
-  border-radius: 50%;
+    padding:8px 18px;
 
-  background: white;
+    border-radius:30px;
 
-  padding: 5px;
+    cursor:pointer;
 
+    font-size:15px;
+    font-weight:600;
+}
+
+.dropdown-content {
+
+    position: absolute;
+
+    top: 100%;
+    right: 0;
+
+    margin-top: 2px;
+
+    width: 220px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    display: none;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+    z-index: 1001;
+}
+
+.user-dropdown {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.user-dropdown:hover .dropdown-content{
+
+    display:block;
+}
+
+.dropdown-content a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#333;
+
+    padding:14px 18px;
+
+    transition:.3s;
+}
+
+.dropdown-content a:hover{
+
+    background:#f4f4f4;
+}
+
+.dropdown-content button{
+
+    width:100%;
+
+    border:none;
+
+    background:#dc3545;
+
+    color:white;
+
+    padding:14px;
+
+    cursor:pointer;
+
+    font-size:15px;
+}
+
+.dropdown-content button:hover{
+
+    background:#bb2d3b;
 }

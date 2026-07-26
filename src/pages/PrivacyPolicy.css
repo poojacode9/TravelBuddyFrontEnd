@@ -1,0 +1,118 @@
+.privacy-page {
+  width: 100%;
+}
+
+
+/* Hero */
+
+.privacy-hero {
+
+  background: linear-gradient(
+    90deg,
+    #0d6efd,
+    #0b5ed7
+  );
+
+  color:white;
+
+  text-align:center;
+
+  padding:60px 20px;
+
+}
+
+
+.privacy-hero h1 {
+
+  font-size:42px;
+
+  margin-bottom:15px;
+
+}
+
+
+.privacy-hero p {
+
+  font-size:18px;
+
+}
+
+
+
+/* Content */
+
+.privacy-content {
+
+  padding:50px 80px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:25px;
+
+}
+
+
+
+.privacy-card {
+
+  background:white;
+
+  padding:30px;
+
+  border-radius:15px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+.privacy-card h2 {
+
+  color:#0d6efd;
+
+  margin-bottom:15px;
+
+}
+
+
+
+.privacy-card p {
+
+  font-size:16px;
+
+  line-height:1.7;
+
+}
+
+
+
+.privacy-card ul {
+
+  line-height:2;
+
+}
+
+
+
+/* Contact section */
+
+.privacy-contact {
+
+  background:#f1f5ff;
+
+  padding:40px;
+
+  text-align:center;
+
+}
+
+
+
+.privacy-contact h2 {
+
+  color:#0d6efd;
+
+}

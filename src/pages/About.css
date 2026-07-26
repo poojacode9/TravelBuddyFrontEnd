@@ -1,0 +1,193 @@
+.about-page {
+  width: 100%;
+}
+
+
+/* Hero */
+
+.about-hero {
+
+  background: linear-gradient(
+    90deg,
+    #0d6efd,
+    #0b5ed7
+  );
+
+  color:white;
+
+  padding:70px 20px;
+
+  text-align:center;
+
+}
+
+
+.about-hero h1 {
+
+  font-size:42px;
+
+  margin-bottom:20px;
+
+}
+
+
+.about-hero p {
+
+  font-size:18px;
+
+  max-width:700px;
+
+  margin:auto;
+
+}
+
+
+
+
+/* Introduction */
+
+.about-intro {
+
+  display:flex;
+
+  gap:40px;
+
+  padding:60px;
+
+  align-items:center;
+
+}
+
+
+.about-image img {
+
+  width:450px;
+
+  border-radius:15px;
+
+}
+
+
+
+.about-content {
+
+  flex:1;
+
+}
+
+
+.about-content h2 {
+
+  font-size:32px;
+
+  color:#0d6efd;
+
+}
+
+
+
+
+/* Mission */
+
+.mission-section {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:30px;
+
+  padding:40px;
+
+}
+
+
+
+.mission-card {
+
+  width:350px;
+
+  padding:30px;
+
+  border-radius:15px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+.mission-card h2 {
+
+  color:#0d6efd;
+
+}
+
+
+
+
+/* Features */
+
+.why-about {
+
+  text-align:center;
+
+  padding:50px;
+
+}
+
+
+
+.features {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:25px;
+
+}
+
+
+
+.feature-card {
+
+  width:280px;
+
+  padding:25px;
+
+  border-radius:12px;
+
+  box-shadow:0 3px 12px rgba(0,0,0,0.1);
+
+}
+
+
+
+
+/* Stats */
+
+.stats {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:80px;
+
+  background:#0d6efd;
+
+  color:white;
+
+  padding:40px;
+
+  text-align:center;
+
+}
+
+
+.stats h2 {
+
+  font-size:35px;
+
+}
