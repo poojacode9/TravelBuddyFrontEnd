@@ -1,144 +1,113 @@
-import React, { useState } from "react";
 import "./NeedHelp.css";
 
 function NeedHelp() {
-
-  const [helpData, setHelpData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-
-
-  const handleChange = (e) => {
-
-    setHelpData({
-      ...helpData,
-      [e.target.name]: e.target.value
-    });
-
-  };
-
-
-  const handleSubmit = (e) => {
-
-    e.preventDefault();
-
-    console.log(helpData);
-
-    alert("Your request has been submitted. We will contact you soon!");
-
-  };
-
-
   return (
+    <div className="help-page">
 
-    <div className="help-container">
+      {/* Hero Section */}
 
+      <section className="help-hero">
 
-      <div className="help-box">
-
-
-        <h1>Need Help?</h1>
+        <h1>Help Center</h1>
 
         <p>
-          Have questions or facing any issues?
-          Our support team is here to help you.
+          Find answers to frequently asked questions about Travel Buddy.
         </p>
 
-
-        <form onSubmit={handleSubmit}>
-
-
-          <input
-
-            type="text"
-
-            name="name"
-
-            placeholder="Enter Your Name"
-
-            value={helpData.name}
-
-            onChange={handleChange}
-
-            required
-
-          />
+      </section>
 
 
 
-          <input
+      {/* FAQ Section */}
 
-            type="email"
+      <section className="faq-section">
 
-            name="email"
+        <h2>Frequently Asked Questions</h2>
 
-            placeholder="Enter Your Email"
+        <div className="faq-card">
+          <h3>🧳 How do I book a tour package?</h3>
+          <p>
+            Browse the available tour packages, choose your preferred
+            destination, select the travel date, and complete your booking
+            by making the payment.
+          </p>
+        </div>
 
-            value={helpData.email}
+        <div className="faq-card">
+          <h3>💳 Which payment methods are supported?</h3>
+          <p>
+            Travel Buddy supports UPI, debit cards, credit cards,
+            net banking, and digital wallets through Razorpay.
+          </p>
+        </div>
 
-            onChange={handleChange}
+        <div className="faq-card">
+          <h3>❌ Can I cancel my booking?</h3>
+          <p>
+            Yes. Cancellation is available according to the cancellation
+            policy of the selected tour package.
+          </p>
+        </div>
 
-            required
+        <div className="faq-card">
+          <h3>🎫 Where can I find my booked ticket?</h3>
+          <p>
+            After a successful booking, your ticket will be available
+            in the <strong>Issued Ticket</strong> section of your account.
+          </p>
+        </div>
 
-          />
+        <div className="faq-card">
+          <h3>📅 Can I change my travel date?</h3>
+          <p>
+            Travel date changes depend on package availability.
+            Contact our support team for assistance.
+          </p>
+        </div>
 
+        <div className="faq-card">
+          <h3>👤 How can I update my profile?</h3>
+          <p>
+            Go to <strong>My Profile</strong> after logging in and
+            update your personal information.
+          </p>
+        </div>
 
-
-          <input
-
-            type="text"
-
-            name="subject"
-
-            placeholder="Enter Subject"
-
-            value={helpData.subject}
-
-            onChange={handleChange}
-
-            required
-
-          />
-
-
-
-          <textarea
-
-            name="message"
-
-            placeholder="Write your message"
-
-            value={helpData.message}
-
-            onChange={handleChange}
-
-            required
-
-          ></textarea>
-
-
-
-          <button type="submit">
-
-            Submit Request
-
-          </button>
-
-
-        </form>
+      </section>
 
 
-      </div>
 
+      {/* Emergency Support */}
+
+      <section className="support-box">
+
+        <h2>Still Need Help?</h2>
+
+        <p>
+          If you couldn't find the answer you're looking for,
+          our support team is happy to assist you.
+        </p>
+
+        <div className="support-details">
+
+          <p>
+            📧 support@travelbuddy.com
+          </p>
+
+          <p>
+            📞 +91 98765 43210
+          </p>
+
+          <p>
+            🕘 Monday - Saturday | 9:00 AM - 6:00 PM
+          </p>
+
+        </div>
+
+      </section>
 
     </div>
-
   );
-
 }
-
 
 export default NeedHelp;

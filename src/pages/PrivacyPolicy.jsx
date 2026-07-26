@@ -1,99 +1,166 @@
-import React from "react";
 import "./PrivacyPolicy.css";
 
 function PrivacyPolicy() {
 
   return (
-
-    <div className="privacy-container">
-
-
-      <div className="privacy-box">
+    <div className="privacy-page">
 
 
-        <h1>Privacy Policy</h1>
+      {/* Header */}
+      <section className="privacy-hero">
 
-
-        <p>
-          Welcome to TravelBuddy. Your privacy is important to us.
-          This Privacy Policy explains how we collect, use and protect
-          your personal information when you use our travel services.
-        </p>
-
-
-
-        <h2>1. Information We Collect</h2>
+        <h1>
+          Privacy Policy
+        </h1>
 
         <p>
-          We may collect information such as your name, email address,
-          contact details, booking information and preferences to provide
-          better travel services.
+          Your privacy and trust are important to us.
         </p>
 
+      </section>
 
 
-        <h2>2. How We Use Your Information</h2>
+
+      {/* Content */}
+
+      <section className="privacy-content">
+
+
+        <div className="privacy-card">
+
+          <h2>
+            Introduction
+          </h2>
+
+          <p>
+            Welcome to Travel Buddy. This Privacy Policy explains
+            how we collect, use, and protect your personal information
+            when you use our travel services and website.
+          </p>
+
+        </div>
+
+
+
+        <div className="privacy-card">
+
+          <h2>
+            Information We Collect
+          </h2>
+
+          <p>
+            We may collect information such as your name, email address,
+            phone number, booking details, and payment information when
+            you register, book tours, or contact us.
+          </p>
+
+        </div>
+
+
+
+        <div className="privacy-card">
+
+          <h2>
+            How We Use Your Information
+          </h2>
+
+          <ul>
+
+            <li>
+              To provide and manage tour booking services.
+            </li>
+
+            <li>
+              To process payments and confirm reservations.
+            </li>
+
+            <li>
+              To improve our website and user experience.
+            </li>
+
+            <li>
+              To send important updates regarding your bookings.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+
+        <div className="privacy-card">
+
+          <h2>
+            Data Security
+          </h2>
+
+          <p>
+            We take appropriate security measures to protect your
+            personal information from unauthorized access, misuse,
+            or disclosure.
+          </p>
+
+        </div>
+
+
+
+
+        <div className="privacy-card">
+
+          <h2>
+            Third Party Services
+          </h2>
+
+          <p>
+            We may use trusted third-party services such as payment
+            gateways and hosting providers to provide better services.
+            These services follow their own privacy policies.
+          </p>
+
+        </div>
+
+
+
+
+        <div className="privacy-card">
+
+          <h2>
+            Your Rights
+          </h2>
+
+          <p>
+            You have the right to access, update, or request deletion
+            of your personal information. You can contact us for any
+            privacy-related concerns.
+          </p>
+
+        </div>
+
+
+
+      </section>
+
+
+
+      {/* Contact */}
+
+      <section className="privacy-contact">
+
+        <h2>
+          Have Questions?
+        </h2>
 
         <p>
-          Your information is used to process bookings, improve our
-          services, provide customer support and send important updates
-          related to your trips.
+          Contact Travel Buddy support for any privacy concerns.
         </p>
 
-
-
-        <h2>3. Data Security</h2>
-
-        <p>
-          We take appropriate security measures to protect your personal
-          information from unauthorized access, misuse or disclosure.
-        </p>
-
-
-
-        <h2>4. Sharing of Information</h2>
-
-        <p>
-          We do not sell or share your personal information with third
-          parties except when required to provide our services or comply
-          with legal requirements.
-        </p>
-
-
-
-        <h2>5. Cookies</h2>
-
-        <p>
-          TravelBuddy may use cookies to improve user experience,
-          remember preferences and analyze website performance.
-        </p>
-
-
-
-        <h2>6. Changes to Privacy Policy</h2>
-
-        <p>
-          We may update this Privacy Policy from time to time.
-          Any changes will be reflected on this page.
-        </p>
-
-
-
-        <h2>7. Contact Us</h2>
-
-        <p>
-          If you have any questions regarding this Privacy Policy,
-          please contact our support team.
-        </p>
-
-
-      </div>
+      </section>
 
 
     </div>
-
   );
-
 }
+
 
 export default PrivacyPolicy;

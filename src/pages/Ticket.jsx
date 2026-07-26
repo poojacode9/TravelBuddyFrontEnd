@@ -1,11 +1,13 @@
-function Ticket(){
+function Ticket() {
 
-return(
-<div>
-<h1>Issued Ticket</h1>
-<p>Your booked tickets will appear here.</p>
-</div>
-)
+  return (
+    <div>
+      <h1>Issued Ticket</h1>
+      <p>
+        Your booked tour tickets will appear here.
+      </p>
+    </div>
+  );
 
 }
 

@@ -1,11 +1,13 @@
-function Profile(){
+function Profile() {
 
-return(
-<div>
-<h1>My Profile Page</h1>
-<p>User profile details will appear here.</p>
-</div>
-)
+  return (
+    <div>
+      <h1>My Profile</h1>
+      <p>
+        Welcome to your Travel Buddy profile.
+      </p>
+    </div>
+  );
 
 }
 

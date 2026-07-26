@@ -1,75 +1,88 @@
-import React, { useState } from "react";
 import "./Contact.css";
 
-function ContactUs() {
-
-
-  const [contactData, setContactData] = useState({
-
-    name:"",
-    email:"",
-    phone:"",
-    message:""
-
-  });
-
-
-
-  const handleChange = (e)=>{
-
-    setContactData({
-
-      ...contactData,
-      [e.target.name]: e.target.value
-
-    });
-
-  };
-
-
-
-  const handleSubmit = (e)=>{
-
-    e.preventDefault();
-
-    console.log(contactData);
-
-    alert("Thank you for contacting TravelBuddy. We will get back to you soon!");
-
-  };
-
-
+function Contact() {
 
   return (
-
-    <div className="contact-container">
-
-
-      <div className="contact-box">
+    <div className="contact-page">
 
 
-        <h1>Contact Us</h1>
+      {/* Hero Section */}
 
+      <section className="contact-hero">
 
-        <p className="contact-text">
+        <h1>
+          Contact Us
+        </h1>
 
-          Have any questions about our tours or services?
-          Feel free to contact us. Our team is always ready to help you.
-
+        <p>
+          We are here to help you plan your perfect journey.
         </p>
 
+      </section>
+
+
+
+
+      {/* Contact Information */}
+
+      <section className="contact-container">
 
 
         <div className="contact-info">
 
 
-          <h3>TravelBuddy Support</h3>
+          <h2>
+            Get In Touch
+          </h2>
 
-          <p>📍 Pune, Maharashtra, India</p>
 
-          <p>📞 +91 9876543210</p>
+          <p>
+            Have questions about our tour packages or bookings?
+            Feel free to contact our Travel Buddy support team.
+          </p>
 
-          <p>✉ support@travelbuddy.com</p>
+
+
+          <div className="info-item">
+
+            <h3>
+              📍 Address
+            </h3>
+
+            <p>
+              Pune, Maharashtra, India
+            </p>
+
+          </div>
+
+
+
+          <div className="info-item">
+
+            <h3>
+              📞 Phone
+            </h3>
+
+            <p>
+              +91 98765 43210
+            </p>
+
+          </div>
+
+
+
+          <div className="info-item">
+
+            <h3>
+              ✉ Email
+            </h3>
+
+            <p>
+              support@travelbuddy.com
+            </p>
+
+          </div>
+
 
 
         </div>
@@ -77,98 +90,85 @@ function ContactUs() {
 
 
 
-        <form onSubmit={handleSubmit}>
+
+        {/* Contact Form */}
+
+        <div className="contact-form">
 
 
-          <input
-
-            type="text"
-
-            name="name"
-
-            placeholder="Enter Your Name"
-
-            value={contactData.name}
-
-            onChange={handleChange}
-
-            required
-
-          />
+          <h2>
+            Send Us A Message
+          </h2>
 
 
-
-          <input
-
-            type="email"
-
-            name="email"
-
-            placeholder="Enter Your Email"
-
-            value={contactData.email}
-
-            onChange={handleChange}
-
-            required
-
-          />
+          <form>
 
 
+            <input
+              type="text"
+              placeholder="Your Name"
+            />
 
-          <input
 
-            type="text"
+            <input
+              type="email"
+              placeholder="Your Email"
+            />
 
-            name="phone"
 
-            placeholder="Enter Phone Number"
+            <input
+              type="text"
+              placeholder="Subject"
+            />
 
-            value={contactData.phone}
 
-            onChange={handleChange}
-
-            required
-
-          />
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+            ></textarea>
 
 
 
-          <textarea
+            <button>
+              Send Message
+            </button>
 
-            name="message"
 
-            placeholder="Write Your Message"
+          </form>
 
-            value={contactData.message}
 
-            onChange={handleChange}
+        </div>
 
-            required
 
-          ></textarea>
+      </section>
 
 
 
 
-          <button type="submit">
+      {/* Support Section */}
 
-            Send Message
-
-          </button>
+      <section className="support-section">
 
 
-        </form>
+        <h2>
+          Need Travel Assistance?
+        </h2>
 
 
-      </div>
+        <p>
+          Our team is available to help you with bookings,
+          packages, payments, and travel queries.
+        </p>
+
+
+      </section>
+
 
 
     </div>
-
   );
 
 }
 
 
-export default ContactUs;
+export default Contact;
