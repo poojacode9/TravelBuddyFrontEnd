@@ -1,26 +1,34 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <ul className="nav-links">
 
-        <li><Link to="/">Home</Link></li>
+      <NavLink to="/">
+        Home
+      </NavLink>
 
-        <li><Link to="/about">About</Link></li>
+      <NavLink to="/about">
+        About
+      </NavLink>
 
-        <li><Link to="/packages">Tour Packages</Link></li>
+      <NavLink to="/packages">
+        Tour Packages
+      </NavLink>
 
-        <li><Link to="/privacypolicy">Privacy Policy</Link></li>
+      <NavLink to="/privacypolicy">
+        Privacy Policy
+      </NavLink>
 
-        <li><Link to="/contact">Contact Us</Link></li>
+      <NavLink to="/contact">
+        Contact Us
+      </NavLink>
 
-        <li><Link to="/needhelp">Need Help</Link></li>
+      <NavLink to="/needhelp">
+        Need Help
+      </NavLink>
 
-        <li><Link to="/login">MyProfile</Link></li>
-
-      </ul>
     </nav>
   );
 }

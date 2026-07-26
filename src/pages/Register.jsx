@@ -1,149 +1,104 @@
-import React, {useState} from "react";
+import { useState } from "react";
 import "./Register.css";
-import {Link,useNavigate} from "react-router-dom";
 
+function Register() {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-function Register(){
-
-    const navigate = useNavigate();
-
-
-    const [user,setUser]=useState({
-
-        name:"",
-        email:"",
-        password:"",
-        confirmPassword:""
-
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
     });
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-
-    const handleChange=(e)=>{
-
-        setUser({
-
-            ...user,
-            [e.target.name]:e.target.value
-
-        });
-
+    if (user.password !== user.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
     }
 
+    console.log(user);
+    // Later we'll connect this to Spring Boot API
+  };
 
+  return (
+    <div className="register-container">
+      <div className="register-card">
 
-    const handleSubmit=(e)=>{
+        <h1>Travel Buddy</h1>
+        <h2>Create Your Account</h2>
 
-        e.preventDefault();
+        <form onSubmit={handleSubmit}>
 
+          <div className="input-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={user.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        if(user.password !== user.confirmPassword){
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={user.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-            alert("Password does not match");
-            return;
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={user.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        }
+          <div className="input-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              value={user.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
+          <button className="register-btn">
+            Register
+          </button>
 
-        console.log(user);
+        </form>
 
-        alert("Registration Successful");
+        <p className="login-link">
+          Already have an account?
+          <a href="#"> Sign In</a>
+        </p>
 
-        navigate("/login");
-
-    }
-
-
-
-    return(
-
-        <div className="register-container">
-
-
-            <div className="register-box">
-
-
-                <h2>Create Account</h2>
-
-
-                <form onSubmit={handleSubmit}>
-
-
-                <input
-
-                type="text"
-                name="name"
-                placeholder="Enter Name"
-                onChange={handleChange}
-                required
-
-                />
-
-
-                <input
-
-                type="email"
-                name="email"
-                placeholder="Enter Email"
-                onChange={handleChange}
-                required
-
-                />
-
-
-
-                <input
-
-                type="password"
-                name="password"
-                placeholder="Enter Password"
-                onChange={handleChange}
-                required
-
-                />
-
-
-
-                <input
-
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                onChange={handleChange}
-                required
-
-                />
-
-
-                <button>
-                    Register
-                </button>
-
-
-                </form>
-
-
-                <p>
-
-                Already have account?
-
-                <Link to="/login">
-                    Login
-                </Link>
-
-                </p>
-
-
-
-            </div>
-
-
-        </div>
-
-
-    )
-
+      </div>
+    </div>
+  );
 }
-
 
 export default Register;

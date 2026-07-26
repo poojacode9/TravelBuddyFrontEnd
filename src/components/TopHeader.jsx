@@ -1,53 +1,119 @@
 import "./TopHeader.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { FaUserCircle } from "react-icons/fa";
+
 
 function TopHeader() {
 
-return (
-
-<header className="top-header">
-
-<div className="website-name">
-<h2>Travel Buddy</h2>
-</div>
+  const { user, logout } = useAuth();
 
 
-<nav className="user-menu">
+  return (
+    <header className="top-header">
+
+
+      <div className="website-name">
+        <h2>Travel Buddy</h2>
+      </div>
+
+
+      <div className="right-section">
+
+
+        <nav className="user-menu">
+
+
+          {!user ? (
+
+            <>
+              <Link className="auth-btn login" to="/login">
+                Login
+              </Link>
+
+
+              <Link className="auth-btn register" to="/register">
+                Register
+              </Link>
+            </>
+
+          ) : (
+
+
+            <div className="user-dropdown">
+
+
+              <button className="user-btn">
+
+                <FaUserCircle size={22}/>
+
+                <span>
+                  {user.name}
+                </span>
+
+              </button>
 
 
 
-<Link to="/changepassword">
-Change Password
-</Link>
+              <div className="dropdown-content">
 
 
-<Link to="/tourhistory">
-My Tour History
-</Link>
+                <Link to="/profile">
+                  My Profile
+                </Link>
 
 
-<Link to="/ticket">
-Issued Ticket
-</Link>
+                <Link to="/changepassword">
+                  Change Password
+                </Link>
 
 
-</nav>
+                <Link to="/tourhistory">
+                  My Tour History
+                </Link>
 
 
-<div className="logo">
-
-<img
-src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
-alt="Travel Buddy Logo"
-/>
-
-</div>
+                <Link to="/ticket">
+                  Issued Ticket
+                </Link>
 
 
-</header>
 
-);
+                <button onClick={logout}>
+                  Logout
+                </button>
 
+
+              </div>
+
+
+            </div>
+
+
+          )}
+
+
+        </nav>
+
+
+
+        <div className="logo">
+
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
+            alt="Travel Buddy Logo"
+          />
+
+        </div>
+
+
+
+      </div>
+
+
+    </header>
+  );
 }
+
 
 export default TopHeader;
