@@ -83,13 +83,11 @@ function TopHeader() {
         )}
 
         <div className="logo">
-
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
-            alt="Travel Buddy Logo"
-          />
-
-        </div>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/2200/2200326.png"
+    alt="Travel Buddy Logo"
+  />
+</div>
 
       </div>
 

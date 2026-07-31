@@ -11,9 +11,7 @@ function Hero() {
             and create memories that last a lifetime.
           </p>
 
-          <button className="hero-btn">
-            Explore Packages
-          </button>
+         
         </div>
       </div>
     </section>

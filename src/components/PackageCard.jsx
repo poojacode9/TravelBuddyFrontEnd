@@ -8,26 +8,30 @@ function PackageCard({ id, image, title, location, duration, price, rating }) {
   const { user } = useAuth();
 
   const handleBookNow = () => {
-
+console.log("Package id =", id);
   if (!user) {
     navigate("/login");
   } else {
+    console.log("Package id =", id);
     navigate(`/booking/${id}`, {
-      state: {
-        image,
-        title,
-        location,
-        duration,
-        price,
-        rating
-      }
-    });
+ state: {
+    id,
+    packageName: title,
+    destination: location,
+    duration,
+    price,
+    imageUrl: image
+  }
+});
   }
 
 };
   return (
     <div className="package-card">
-      <img src={image} alt={title} />
+      <img
+  src={`http://localhost:8080/images/${image}`}
+  alt={title}
+/>
 
       <div className="package-content">
         <h3>{title}</h3>

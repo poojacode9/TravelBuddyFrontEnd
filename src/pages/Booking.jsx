@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Booking.css";
+import axios from "axios";
 
 function Booking() {
 
@@ -10,6 +11,7 @@ function Booking() {
   const { state } = useLocation();
 
   const packageDetails = state;
+  console.log("Package Details:", packageDetails);
     if (!packageDetails) {
     return (
         <div style={{ padding: "40px", textAlign: "center" }}>
@@ -23,25 +25,100 @@ function Booking() {
 
   const [persons, setPersons] = useState(1);
 
-  const packagePrice = Number(
-  packageDetails.price.replace(/,/g, "")
-);
+  const packagePrice = packageDetails.price;
 
-  const packageName = packageDetails.title;
+  const packageName = packageDetails.packageName;
 
-  const destination = packageDetails.location;
+  const destination = packageDetails.destination;
 
   const duration = packageDetails.duration;
 
   const totalAmount = packagePrice * persons;
 
-  const handleSubmit = (e) => {
 
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const bookingData = {
+      bookingDate: new Date().toISOString().split("T")[0],
+      travelDate: travelDate,
+      numberOfPersons: Number(persons),
+      totalAmount: totalAmount,
+      status: "PENDING",
+      userId: user.id,
+      packageId: packageDetails.id,
+    };
 
-    alert("Booking page is ready. Backend connection will be done next.");
+    
+    const token = localStorage.getItem("token");
 
-  };
+const response = await axios.post(
+  "http://localhost:8080/bookings",
+  bookingData,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
+
+const booking = response.data.booking;
+const payment = response.data.payment;
+console.log("Payment Response:", payment);
+const options = {
+
+  key: payment.key,
+
+  amount: payment.amount * 100,
+
+  currency: "INR",
+
+  name: "TravelBuddy",
+
+  description: "Tour Booking",
+
+  order_id: payment.razorpayOrderId,
+
+ handler: async function (response) {
+
+    try {
+
+        const verifyResponse = await axios.post(
+            "http://localhost:8081/payments/verify",
+            {
+                razorpayOrderId: response.razorpay_order_id,
+                razorpayPaymentId: response.razorpay_payment_id,
+                razorpaySignature: response.razorpay_signature
+            }
+        );
+
+        console.log(verifyResponse.data);
+
+        alert("Payment Successful!");
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Payment Verification Failed!");
+
+    }
+
+}
+
+};
+
+const razorpay = new window.Razorpay(options);
+
+razorpay.open();
+  } catch (error) {
+
+  
+
+  alert("Booking failed!");
+
+}
+};
 
   return (
 
@@ -57,14 +134,14 @@ function Booking() {
 
           <h2>Package Details</h2>
                     <img
-            src={packageDetails.image}
-            alt={packageName}
-            style={{
-                width: "100%",
-                borderRadius: "10px",
-                marginBottom: "20px"
-            }}
-            />
+                          src={`http://localhost:8080/images/${packageDetails.imageUrl}`}
+                          alt={packageName}
+                          style={{
+                            width: "100%",
+                            borderRadius: "10px",
+                            marginBottom: "20px"
+                          }}
+                        />
 
           <p><strong>Package :</strong> {packageName}</p>
 
