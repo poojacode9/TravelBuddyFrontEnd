@@ -28,7 +28,7 @@ function AdminDashboard() {
       <div className="admin-cards">
 
 
-        <Link to="/admin/packages" className="admin-card">
+        <Link to="/admin/pending-packages" className="admin-card">
 
           <FaBoxOpen className="admin-icon"/>
 

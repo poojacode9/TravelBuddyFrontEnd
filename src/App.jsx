@@ -22,6 +22,12 @@ import Ticket from "./pages/Ticket";
 import Booking from "./pages/Booking";
 import GuideDashboard from "./pages/GuideDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import AddTourPackage from "./pages/AddTourPackage";
+import MyPackages from "./pages/MyPackages";
+import EditTourPackage from "./pages/EditTourPackage";
+import PendingPackages from "./pages/PendingPackages";
+import AddReview from "./pages/AddReview";
+
 function App() {
 
   return (
@@ -45,12 +51,31 @@ function App() {
 
         <Route path="/guide-dashboard" element={<GuideDashboard />} />
 
+        <Route
+        path="/admin/pending-packages"
+        element={<PendingPackages />}
+        />
+        
         <Route 
           path="/admin-dashboard" 
           element={<AdminDashboard />} 
           />
 
-          
+        <Route
+        path="/guide/edit-package/:id"
+        element={<EditTourPackage/>}
+        />
+
+        <Route 
+        path="/guide/my-packages"
+        element={<MyPackages/>}
+        />
+
+        <Route 
+          path="/guide/add-package" 
+          element={<AddTourPackage/>}
+          />
+
         <Route 
           path="/privacypolicy" 
           element={<PrivacyPolicy />} 
@@ -86,6 +111,10 @@ function App() {
           element={<Profile />} 
         />
 
+            <Route 
+            path="/add-review"
+            element={<AddReview />}
+            />
 
         <Route 
           path="/changepassword" 
