@@ -49,7 +49,7 @@ const handleLogin = async (e) => {
       role: userResponse.data.role,
     });
 
-    alert("Login Successful!");
+    
 
     if (userResponse.data.role === "GUIDE") {
 

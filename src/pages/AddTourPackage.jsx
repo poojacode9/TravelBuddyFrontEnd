@@ -86,7 +86,7 @@ console.log("Upload response:", uploadResponse.data);
     );
     console.log("Package saved successfully!");
 
-    alert("Tour Package Added Successfully!");
+   
     navigate("/guide-dashboard");
 
   } catch (error) {

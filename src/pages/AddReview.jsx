@@ -49,7 +49,7 @@ function AddReview() {
       );
 
 
-      alert("Review submitted successfully");
+    
 
       navigate("/tourhistory");
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Booking.css";
 import axios from "axios";
@@ -9,6 +9,8 @@ function Booking() {
   const { user } = useAuth();
 
   const { state } = useLocation();
+
+  const navigate = useNavigate();
 
   const packageDetails = state;
   console.log("Package Details:", packageDetails);
@@ -64,14 +66,12 @@ const response = await axios.post(
 
 const booking = response.data.booking;
 const payment = response.data.payment;
+
+localStorage.setItem("bookingId", booking.id);
 console.log("Payment Response:", payment);
 const options = {
 
   key: payment.key,
-
-  amount: payment.amount * 100,
-
-  currency: "INR",
 
   name: "TravelBuddy",
 
@@ -92,9 +92,22 @@ const options = {
             }
         );
 
-        console.log(verifyResponse.data);
+                            console.log(verifyResponse.data);
 
-        alert("Payment Successful!");
+                    // Generate Ticket
+                    await axios.post(
+                      `http://localhost:8080/tickets/${booking.id}`,
+                      {},
+                      {
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                        },
+                      }
+                    );
+
+                   
+
+                    navigate("/ticket");
 
     } catch (error) {
 

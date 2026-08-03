@@ -106,7 +106,7 @@ function EditTourPackage(){
             );
 
 
-            alert("Package Updated Successfully");
+           
 
 
             navigate("/guide/my-packages");

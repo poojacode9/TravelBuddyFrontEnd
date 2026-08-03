@@ -51,6 +51,8 @@ function App() {
 
         <Route path="/guide-dashboard" element={<GuideDashboard />} />
 
+        <Route path="/ticket" element={<Ticket />} />
+        
         <Route
         path="/admin/pending-packages"
         element={<PendingPackages />}
