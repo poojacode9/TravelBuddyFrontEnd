@@ -117,13 +117,13 @@ function App() {
             />
 
         <Route 
-          path="/changepassword" 
+          path="/change-password" 
           element={<ChangePassword />} 
         />
 
 
         <Route 
-          path="/tourhistory" 
+          path="/tour-history" 
           element={<TourHistory />} 
         />
 
